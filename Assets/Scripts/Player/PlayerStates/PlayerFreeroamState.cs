@@ -19,6 +19,7 @@ public class PlayerFreeroamState : PlayerState
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        PlayerInput.GetInstance().InputsUnlocked();
         //UIManager.instance.EnableCrosshair();
         //slideToPos = true;
     }
