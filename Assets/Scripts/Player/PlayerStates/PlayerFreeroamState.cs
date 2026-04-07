@@ -62,7 +62,9 @@ public class PlayerFreeroamState : PlayerState
 
     void MovePlayer()
     {
-        player.GetCharacterController().Move((player.transform.forward * input.vertical + player.transform.right * input.horizontal) * player.GetWalkSpeed() * Time.deltaTime);
+        Vector3 movementDirection = (player.transform.forward * input.vertical + player.transform.right * input.horizontal) * player.GetWalkSpeed() * Time.deltaTime;
+        player.GetCharacterController().Move(movementDirection);
+        player.transform.Find("PlayerModel").transform.rotation = Quaternion.Slerp(player.transform.Find("PlayerModel").transform.rotation, Quaternion.LookRotation(movementDirection), Time.deltaTime * 40f);
 
         if (player.IsGrounded() && playerVelocity.y < 0)
             playerVelocity.y = -2.0f;
