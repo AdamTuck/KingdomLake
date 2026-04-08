@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.6271678, g: 0.95121396, b: 1.0127531, a: 1.5}
-  m_AmbientEquatorColor: {r: 0.68121576, g: 0.5975706, b: 0.708364, a: 1.3499999}
-  m_AmbientGroundColor: {r: 0.34060788, g: 0.2987853, b: 0.354182, a: 1.3499999}
+  m_AmbientSkyColor: {r: 0.63919544, g: 0.9581202, b: 1.018868, a: 1.5}
+  m_AmbientEquatorColor: {r: 0.63583124, g: 0.8300802, b: 0.9169811, a: 1.3499999}
+  m_AmbientGroundColor: {r: 0.31791562, g: 0.4150401, b: 0.45849055, a: 1.3499999}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -798,13 +798,13 @@ MonoBehaviour:
   transit: {fileID: 286745423}
   perennialProfile: {fileID: 11400000, guid: 8ce0d8458b4495b4593c1e03027a0ce5, type: 2}
   overrideDate: {fileID: 0}
-  yearPercentage: 0.9650931
+  yearPercentage: 0.9663121
   transitioningTime: 0
   currentTime:
-    hours: 7
-    minutes: 47
-    seconds: 14
-    milliseconds: 41
+    hours: 9
+    minutes: 11
+    seconds: 29
+    milliseconds: 362
     timeAsPercentage: 0
   currentDay: 46
   currentYear: 0
@@ -884,8 +884,8 @@ MonoBehaviour:
   controlMethod: 1
   localTemperatureFilter: 0
   localPrecipitationFilter: 0
-  currentTemperature: 15.207553
-  currentPrecipitation: 57.358856
+  currentTemperature: 15.452261
+  currentPrecipitation: 56.03148
   snowAmount: 0
   snowMeltSpeed: 0.35
   groundwaterAmount: 0
@@ -10975,7 +10975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LensFlareData: {fileID: 11400000, guid: b7bd2fcbf47c015488d42ef693c6db7d, type: 2}
   version: 0
-  intensity: 0.80043876
+  intensity: 1.3338252
   maxAttenuationDistance: 100
   maxAttenuationScale: 100
   distanceAttenuationCurve:
@@ -11146,7 +11146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961365134}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.07169865, y: 0, z: 0, w: 0.99742633}
+  m_LocalRotation: {x: 0.3047153, y: 0, z: 0, w: 0.9524435}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11163,7 +11163,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 1
-  m_Color: {r: 0.95385647, g: 0.75399977, b: 0.63717353, a: 0}
+  m_Color: {r: 1.375392, g: 1.3476623, b: 1.1535546, a: 0}
   m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
@@ -12737,7 +12737,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7320508, y: 1.7320508, z: 1.7320508}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 160430592}
@@ -13019,7 +13019,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890818226}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.38652426, y: -0.18130274, z: -0.0777838, w: 0.9009318}
+  m_LocalRotation: {x: -0.4901253, y: 0.15048006, z: 0.08634167, w: 0.854212}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13346,7 +13346,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.87864816, g: 0.5234029, b: 0.52546614, a: 1}
+      maxColor: {r: 0.7871142, g: 0.7786441, b: 0.7786441, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -17151,7 +17151,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.87864816, g: 0.5234029, b: 0.52546614, a: 1}
+      maxColor: {r: 0.7871142, g: 0.7786441, b: 0.7786441, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -18199,33 +18199,33 @@ MonoBehaviour:
   usePhysicalSunHeight: 1
   sunDirection: 120
   sunPitch: 0
-  moonDirection: {x: 0.26655215, y: -0.72466886, z: -0.6354566}
-  skyZenithColor: {r: 0.029505089, g: 0.12555048, b: 0.21309231, a: 1}
-  skyHorizonColor: {r: 0.3028401, g: 0.47647864, b: 0.55947995, a: 1}
-  cloudColor: {r: 0.87864816, g: 0.5234029, b: 0.52546614, a: 1}
-  cloudHighlightColor: {r: 3.0382555, g: 2.3112848, b: 2.2961056, a: 1}
-  highAltitudeCloudColor: {r: 1.4945483, g: 1.7015686, b: 1.7676833, a: 1}
-  sunlightColor: {r: 0.95385647, g: 0.75399977, b: 0.63717353, a: 1}
+  moonDirection: {x: -0.17244728, y: -0.8633272, z: -0.47426587}
+  skyZenithColor: {r: 0.095871046, g: 0.15880214, b: 0.27084327, a: 1}
+  skyHorizonColor: {r: 0.4824, g: 0.693737, b: 0.82259214, a: 1}
+  cloudColor: {r: 0.7871142, g: 0.7786441, b: 0.7786441, a: 1}
+  cloudHighlightColor: {r: 4.881815, g: 4.1698213, b: 3.5287547, a: 1}
+  highAltitudeCloudColor: {r: 1.0833969, g: 1.3920008, b: 1.382235, a: 1}
+  sunlightColor: {r: 1.375392, g: 1.3476623, b: 1.1535546, a: 1}
   starColor: {r: 0, g: 0, b: 0, a: 1}
-  ambientLightHorizonColor: {r: 0.5046043, g: 0.4426449, b: 0.5247141, a: 1}
-  ambientLightZenithColor: {r: 0.4181119, g: 0.63414264, b: 0.67516875, a: 1}
+  ambientLightHorizonColor: {r: 0.47098613, g: 0.61487424, b: 0.6792453, a: 1}
+  ambientLightZenithColor: {r: 0.4261303, g: 0.6387468, b: 0.6792453, a: 1}
   ambientLightMultiplier: 1.5
   galaxyIntensity: 0
   fogColor1: {r: 0, g: 0, b: 0, a: 0.007843138}
-  fogColor2: {r: 0.011744273, g: 0.08272677, b: 0.12832971, a: 0.13725491}
-  fogColor3: {r: 0.035932705, g: 0.1426365, b: 0.23406427, a: 0.5019608}
-  fogColor4: {r: 0.060864855, g: 0.17851412, b: 0.29130235, a: 0.75686276}
-  fogColor5: {r: 0.27903143, g: 0.46879473, b: 0.5610483, a: 1}
-  fogFlareColor: {r: 3.7989182, g: 0.74218845, b: 0.6078356, a: 1}
-  fogMoonFlareColor: {r: 0.28980076, g: 0.5982531, b: 1.2046621, a: 1}
+  fogColor2: {r: 0.031007519, g: 0.24015406, b: 0.38340175, a: 0.13725491}
+  fogColor3: {r: 0.07379238, g: 0.30669507, b: 0.49697867, a: 0.5019608}
+  fogColor4: {r: 0.01267783, g: 0.28427047, b: 0.5442268, a: 0.75686276}
+  fogColor5: {r: 0.42033762, g: 0.7267505, b: 0.9177686, a: 1}
+  fogFlareColor: {r: 1.0833969, g: 1.3920008, b: 1.382235, a: 1}
+  fogMoonFlareColor: {r: 0, g: 0, b: 0, a: 1}
   fogShadowColor: {r: 0, g: 0, b: 0, a: 0}
   fogLitColor: {r: 0, g: 0, b: 0, a: 0}
   gradientExponent: 0.549
   sunSize: 1
   sunColor: {r: 10.432951, g: 10.432951, b: 10.432951, a: 1}
-  moonColor: {r: 2, g: 2, b: 2, a: 0.2709496}
+  moonColor: {r: 2, g: 2, b: 2, a: 0.24972695}
   sunFalloff: 0.48
-  sunFlareColor: {r: 1.1132634, g: 1.0214204, b: 0.7928595, a: 1}
+  sunFlareColor: {r: 2.4895027, g: 2.4625113, b: 1.8809159, a: 1}
   moonFalloff: 0.752
   moonlightColor: {r: 0, g: 0, b: 0, a: 1}
   moonFlareColor: {r: 0.023529412, g: 0.08627451, b: 0.14901961, a: 1}
@@ -18247,9 +18247,9 @@ MonoBehaviour:
   fogStart4: 50
   fogHeight: 1
   fogDensityMultiplier: 1
-  fogLightFlareIntensity: 0.9900312
-  fogLightFlareFalloff: 21.663712
-  fogLightFlareSquish: 4.4881234
+  fogLightFlareIntensity: 1
+  fogLightFlareFalloff: 86.64056
+  fogLightFlareSquish: 1
   fogSmoothness: 1
   fogVariationAmount: 0.78
   fogVariationDirection: {x: 6, y: 0, z: 0}
@@ -18262,7 +18262,7 @@ MonoBehaviour:
   heightFogTransition: 52
   heightFogDistance: 5000
   heightFogColor: {r: 0.5425863, g: 0.6662698, b: 0.8396226, a: 0.2901961}
-  cloudMoonColor: {r: 0.02249115, g: 0.031141594, b: 0.05882301, a: 1}
+  cloudMoonColor: {r: 0, g: 0, b: 0, a: 1}
   cloudSunHighlightFalloff: 19.1
   cloudMoonHighlightFalloff: 11.9
   cloudWindSpeed: 2.66
@@ -18420,9 +18420,9 @@ MonoBehaviour:
   atmosphereModule: {fileID: 0}
   windModule: {fileID: 286745428}
   events:
-    timeToCheckFor: 0.5416667
-    currentMinute: 467
-    currentHour: 7
+    timeToCheckFor: 0.875
+    currentMinute: 551
+    currentHour: 9
   cozyTriggerTag: FX Block Zone
   cozyTriggers:
   - {fileID: 0}
@@ -18456,7 +18456,7 @@ Transform:
   m_GameObject: {fileID: 2043600827}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000000037252899, y: -0, z: -0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 0.69051284, y: 10.592945, z: -13.052883}
+  m_LocalPosition: {x: -1.0374047, y: 4.851151, z: -4.9315596}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
