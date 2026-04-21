@@ -57,8 +57,8 @@ public class PlayerController : MonoBehaviour
         input = PlayerInput.GetInstance();
         characterController = GetComponent<CharacterController>();
 
-        //Default state (Free roam)
-        currentState = new PlayerFreeroamState(this);
+        //Default state (Menu)
+        currentState = new PlayerMenuState(this);
         currentState.OnStateEnter();
 
         //freeRoamStart.position = freeRoamSpawn.position;

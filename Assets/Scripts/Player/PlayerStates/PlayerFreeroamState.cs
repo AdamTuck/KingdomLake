@@ -15,11 +15,9 @@ public class PlayerFreeroamState : PlayerState
 
     public override void OnStateEnter()
     {
-        //player.GetMainCamera().transform.localRotation = Quaternion.Euler(0, 0, 0);
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         PlayerInput.GetInstance().InputsUnlocked();
+
+        //player.GetMainCamera().transform.localRotation = Quaternion.Euler(0, 0, 0);
         //UIManager.instance.EnableCrosshair();
         //slideToPos = true;
     }

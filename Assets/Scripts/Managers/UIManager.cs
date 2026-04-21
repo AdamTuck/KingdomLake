@@ -8,8 +8,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private bool gamePaused;
     [SerializeField] private bool clockVisible;
 
-    [Header("UIMessages")]
+    [Header("UIScreens")]
     [SerializeField] private GameObject pauseScreenObj;
+    [SerializeField] private GameObject DayStartReportObj;
+    [SerializeField] private GameObject ShopScreenObj;
 
     [Header("Object Refs")]
     [SerializeField] private GameObject uiClockObject;
@@ -119,6 +121,17 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void EnableFishingReport (bool toEnable)
+    {
+        DayStartReportObj.SetActive(toEnable);
+        StopTime(toEnable);
+    }
+
+    public void EnableShop (bool toEnable)
+    {
+        ShopScreenObj.SetActive(toEnable);
+    }
+
     public void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -129,5 +142,22 @@ public class UIManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+    }
+
+    public void StopTime(bool timeStopped)
+    {
+        if (timeStopped)
+            Time.timeScale = 0;
+        else
+            Time.timeScale = 1;
+    }
+
+    // UI BUTTONS //
+
+    public void DismissDayStartReportUI ()
+    {
+        DayStartReportObj.SetActive(false);
+        GameManager.instance.ChangeState(GameManager.GameState.StartFishing);
+        StopTime(false);
     }
 }
