@@ -20,7 +20,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Positions")]
     //[HideInInspector] public Transform freeRoamStart;
-    public Transform freeRoamSpawn;
+    public Transform freeRoamSpawnFish;
+    public Transform freeRoamSpawnTown;
 
     [Header("Ground Check")]
     [SerializeField] private Transform groundCheckTransform;

@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject pauseScreenObj;
     [SerializeField] private GameObject DayStartReportObj;
     [SerializeField] private GameObject ShopScreenObj;
+    [SerializeField] private GameObject QuestScreenObj;
 
     [Header("Object Refs")]
     [SerializeField] private GameObject uiClockObject;
@@ -130,6 +131,13 @@ public class UIManager : MonoBehaviour
     public void EnableShop (bool toEnable)
     {
         ShopScreenObj.SetActive(toEnable);
+        StopTime (toEnable);
+    }
+
+    public void EnableQuest (bool toEnable)
+    {
+        QuestScreenObj.SetActive(toEnable);
+        StopTime (toEnable);
     }
 
     public void LockCursor()
@@ -158,6 +166,13 @@ public class UIManager : MonoBehaviour
     {
         DayStartReportObj.SetActive(false);
         GameManager.instance.ChangeState(GameManager.GameState.StartFishing);
+        StopTime(false);
+    }
+
+    public void DismissQuestUI ()
+    {
+        QuestScreenObj.SetActive(false);
+        GameManager.instance.ChangeState(GameManager.GameState.TownScene);
         StopTime(false);
     }
 }

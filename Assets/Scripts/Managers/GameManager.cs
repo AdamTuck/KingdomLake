@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     [SerializeField] PlayerController player;
     CameraManager cameraManager;
+    UIManager uiManager;
 
     // Singleton
     public static GameManager instance;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         cameraManager = CameraManager.instance;
+        uiManager = UIManager.instance;
         ChangeState(GameState.DayStartReport);
     }
 
@@ -77,21 +79,26 @@ public class GameManager : MonoBehaviour
     private void StartFishing()
     {
         Debug.Log("Fishing beginning...");
-        UIManager.instance.EnableFishingReport(false);
-        player.ChangeState(new PlayerFreeroamState(player));
+        uiManager.EnableFishingReport(false);
+        player.ChangeState(new PlayerFreeroamState(player, player.freeRoamSpawnFish.transform.position));
 
         cameraManager.EnableOverheadCam();
     }
     private void QuestScene()
-    { 
-    
+    {
+        uiManager.EnableQuest(true);
+        cameraManager.EnableBattleCam();
+        player.ChangeState(new PlayerMenuState(player));
     }
     private void TownScene() 
-    { 
-    
+    {
+        cameraManager.EnableOverheadCam();
+        player.ChangeState(new PlayerFreeroamState(player, player.freeRoamSpawnTown.transform.position));
     }
     private void ShopScene() 
     {
+        uiManager.EnableShop(true);
+        cameraManager.EnableBattleCam();
         player.ChangeState(new PlayerMenuState(player));
     }
     private void DayOver() 
@@ -104,5 +111,10 @@ public class GameManager : MonoBehaviour
     public void EndFishingDay()
     {
         ChangeState(GameState.QuestScene);
+    }
+
+    public void EndTownDay()
+    {
+        ChangeState(GameState.ShopScene);
     }
 }

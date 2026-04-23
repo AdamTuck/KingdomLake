@@ -6,11 +6,13 @@ public class PlayerFreeroamState : PlayerState
 {
     private float cameraXRotation;
     private Vector3 playerVelocity;
+    private Vector3 startPosition;
     bool slideToPos;
     bool resetPos;
 
-    public PlayerFreeroamState(PlayerController _player) : base(_player)
+    public PlayerFreeroamState(PlayerController _player, Vector3 startPos) : base(_player)
     {
+        startPosition = startPos;
     }
 
     public override void OnStateEnter()
@@ -18,16 +20,16 @@ public class PlayerFreeroamState : PlayerState
         PlayerInput.GetInstance().InputsUnlocked();
 
         //player.GetMainCamera().transform.localRotation = Quaternion.Euler(0, 0, 0);
-        //UIManager.instance.EnableCrosshair();
         //slideToPos = true;
+        PlayerController.instance.GetCharacterController().enabled = false;
+        player.transform.position = startPosition;
+        PlayerController.instance.GetCharacterController().enabled = true;
     }
 
     public override void OnStateExit()
     {
-        player.GetMainCamera().transform.localRotation = Quaternion.Euler(0, 0, 0);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        //UIManager.instance.DisableCrosshair();
+        //player.GetMainCamera().transform.localRotation = Quaternion.Euler(0, 0, 0);
+        UIManager.instance.UnlockCursor();
     }
 
     public override void OnStateUpdate()
@@ -37,7 +39,7 @@ public class PlayerFreeroamState : PlayerState
             input.InputsLocked();
             SlideIntoPos();
 
-            if (Vector3.Distance(player.transform.position, player.freeRoamStart.position) < 0.1)
+            if (Vector3.Distance(player.transform.position, startPosition) < 0.1)
             {
                 input.InputsUnlocked();
                 slideToPos = false;
@@ -45,7 +47,8 @@ public class PlayerFreeroamState : PlayerState
         }
         else
         {*/
-            MovePlayer();
+        
+        MovePlayer();
             RotatePlayer();
             //CameraRotation();
             CheckInputs();
@@ -54,8 +57,8 @@ public class PlayerFreeroamState : PlayerState
 
     private void SlideIntoPos()
     {
-        //player.transform.position = Vector3.Lerp(player.transform.position, player.freeRoamStart.position, player.playerAnimateMoveSpeed * Time.deltaTime);
-        //player.transform.rotation = Quaternion.Lerp(player.transform.rotation, player.freeRoamStart.rotation, player.playerAnimateMoveSpeed * Time.deltaTime);
+        //player.transform.position = Vector3.Lerp(player.transform.position, startPosition, player.playerAnimateMoveSpeed * Time.deltaTime);
+        //player.transform.rotation = Quaternion.Lerp(player.transform.rotation, startPosition, player.playerAnimateMoveSpeed * Time.deltaTime);
     }
 
     void MovePlayer()
