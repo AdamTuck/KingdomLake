@@ -1,14 +1,17 @@
 using UnityEngine;
 using DistantLands.Cozy;
+using DistantLands.Cozy.Data;
 
 public class GameManager : MonoBehaviour
 {
     [Header("Game Settings")]
     [SerializeField] private int dayStartHour;
     [SerializeField] private int dayStartMinutes;
+    [SerializeField] private int clockMinuteLenthInSeconds;
 
     [Header("References")]
     [SerializeField] PlayerController player;
+    [SerializeField] PerennialProfile timeProfile;
     CameraManager cameraManager;
     UIManager uiManager;
 
@@ -17,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     private GameState currentState;
 
-    public enum GameState { DayStartReport, StartFishing, QuestScene, TownScene, ShopScene, DayOver }
+    public enum GameState { DayStart, StartFishingFreeroam, QuestScene, TownScene, ShopScene, DayOver }
 
     private void Awake()
     {
@@ -34,7 +37,8 @@ public class GameManager : MonoBehaviour
     {
         cameraManager = CameraManager.instance;
         uiManager = UIManager.instance;
-        ChangeState(GameState.DayStartReport);
+
+        ChangeState(GameState.DayStart);
     }
 
     public void ChangeState (GameState state)
@@ -43,10 +47,10 @@ public class GameManager : MonoBehaviour
 
         switch (currentState)
         {
-            case GameState.DayStartReport:
-                DayStartReport();
+            case GameState.DayStart:
+                StartDay();
                 break;
-            case GameState.StartFishing:
+            case GameState.StartFishingFreeroam:
                 StartFishing(); 
                 break;
             case GameState.QuestScene:
@@ -66,44 +70,58 @@ public class GameManager : MonoBehaviour
 
     // GAME STATES //
 
-    private void DayStartReport ()
+    private void StartDay()
     {
-        Debug.Log("Starting Day...");
-        UIManager.instance.EnableFishingReport(true);
+        uiManager.ShowClock(false);
+        cameraManager.EnableOverheadCam();
         CozyWeather.instance.timeModule.SetHour(dayStartHour);
         CozyWeather.instance.timeModule.SetMinute(dayStartMinutes);
+        timeProfile.timeMovementSpeed = 0;
 
-        cameraManager.EnableBattleCam();
+        uiManager.EnableFishingReport(false);
+
+        uiManager.StartDaySplashScreen();
     }
 
     private void StartFishing()
     {
-        Debug.Log("Fishing beginning...");
-        uiManager.EnableFishingReport(false);
-        player.ChangeState(new PlayerFreeroamState(player, player.freeRoamSpawnFish.transform.position));
+        Debug.Log("Starting Day...");
 
-        cameraManager.EnableOverheadCam();
+        player.ChangeState(new PlayerFreeroamState(player, player.freeRoamSpawnFish.transform.position));
+        uiManager.ShowClock(true);
+        player.ShowRod(true);
+        timeProfile.timeMovementSpeed = clockMinuteLenthInSeconds;
     }
     private void QuestScene()
     {
+        uiManager.ShowClock(false);
+
         cameraManager.EnableBattleCam();
         player.ChangeState(new PlayerMenuState(player));
         uiManager.EnableQuest(true);
     }
     private void TownScene() 
     {
+        uiManager.ShowClock(true);
+
         cameraManager.EnableOverheadCam();
         player.ChangeState(new PlayerFreeroamState(player, player.freeRoamSpawnTown.transform.position));
+        player.ShowRod(false);
     }
     private void ShopScene() 
     {
         uiManager.EnableShop(true);
+        uiManager.ShowClock(false);
+
         cameraManager.EnableBattleCam();
         player.ChangeState(new PlayerMenuState(player));
     }
     private void DayOver() 
-    { 
+    {
+        timeProfile.timeMovementSpeed = 75;
 
+        UIManager.instance.EnableFishingReport(true);
+        cameraManager.EnableBattleCam();
     }
 
     // STATE CHANGES //
@@ -118,5 +136,13 @@ public class GameManager : MonoBehaviour
     {
         if (currentState != GameState.ShopScene)
             ChangeState(GameState.ShopScene);
+    }
+
+    // Weather Event Controls //
+
+    public void MorningFreezeInGameClock ()
+    {
+        if (currentState == GameState.DayOver)
+            timeProfile.timeMovementSpeed = 0;
     }
 }

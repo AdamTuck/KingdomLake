@@ -4,6 +4,7 @@ public class CameraManager : MonoBehaviour
 {
     [Header("Cameras")]
     [SerializeField] private Camera overheadCamera;
+    [SerializeField] private Camera fishingCamera;
     [SerializeField] private Camera battleCamera;
 
     public static CameraManager instance;
@@ -31,9 +32,15 @@ public class CameraManager : MonoBehaviour
         overheadCamera.gameObject.SetActive(true);
     }
 
+    public void EnableFishingCam()
+    {
+        fishingCamera.gameObject.SetActive(true);
+    }
+
     private void DisableAllCams()
     {
         overheadCamera.gameObject.SetActive(false);
         battleCamera.gameObject.SetActive(false);
+        fishingCamera.gameObject.SetActive(false);
     }
 }

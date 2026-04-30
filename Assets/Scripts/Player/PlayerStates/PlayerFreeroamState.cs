@@ -17,18 +17,18 @@ public class PlayerFreeroamState : PlayerState
 
     public override void OnStateEnter()
     {
+        UIManager.instance.LockCursor();
         PlayerInput.GetInstance().InputsUnlocked();
-
-        //player.GetMainCamera().transform.localRotation = Quaternion.Euler(0, 0, 0);
-        //slideToPos = true;
+        
         PlayerController.instance.GetCharacterController().enabled = false;
         player.transform.position = startPosition;
         PlayerController.instance.GetCharacterController().enabled = true;
+
+        CameraManager.instance.EnableOverheadCam();
     }
 
     public override void OnStateExit()
     {
-        //player.GetMainCamera().transform.localRotation = Quaternion.Euler(0, 0, 0);
         UIManager.instance.UnlockCursor();
     }
 
@@ -97,6 +97,11 @@ public class PlayerFreeroamState : PlayerState
         {
             UIManager.instance.PauseGameToggle();
         }
+
+        if (PlayerInput.GetInstance().interactSecondary)
+        {
+            player.ChangeState(new PlayerFishingState(player));
+        } 
 
         /*if (PlayerInput.GetInstance().space && !GameManager.instance.IsLockedAtDesk())
         {

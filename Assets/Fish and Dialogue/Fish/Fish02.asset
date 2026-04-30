@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fish02
   m_EditorClassIdentifier: Assembly-CSharp::FishScriptableObject
   fishName: Fish02
-  fishPrefab: {fileID: 1809855982420343196, guid: a20ffe8d10c78534cafd817b38517e05, type: 3}
+  fishPrefab: {fileID: 9150068014084401248, guid: f7cb329537b549642acb1a10b6f98928, type: 3}
   fishType: 0
   lakes: 0
   minDepth: 10

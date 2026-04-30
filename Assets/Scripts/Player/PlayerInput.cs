@@ -10,8 +10,6 @@ public class PlayerInput : MonoBehaviour
     public bool interact { get; private set; }
     public bool interactSecondary { get; private set; }
     public bool collect { get; private set; }
-    public bool shiftLeft { get; private set; }
-    public bool shiftRight { get; private set; }
     public bool space { get; private set; }
     public bool tab { get; private set; }
     public bool leftBtn { get; private set; }
@@ -67,8 +65,8 @@ public class PlayerInput : MonoBehaviour
             mouseX = Input.GetAxis("Mouse X");
             mouseY = Input.GetAxis("Mouse Y");
 
-            interact = interact || Input.GetKeyDown(KeyCode.F);
-            interactSecondary = interactSecondary || Input.GetKeyDown(KeyCode.R);
+            interact = interact || Input.GetKeyDown(KeyCode.E);
+            interactSecondary = interactSecondary || Input.GetKeyDown(KeyCode.F);
             collect = collect || Input.GetKeyDown(KeyCode.C);
 
             space = space || Input.GetKeyDown(KeyCode.Space);
@@ -79,9 +77,6 @@ public class PlayerInput : MonoBehaviour
 
             num1Pressed = num1Pressed || Input.GetKeyDown(KeyCode.Alpha1);
             num2Pressed = num2Pressed || Input.GetKeyDown(KeyCode.Alpha2);
-
-            shiftLeft = shiftLeft || Input.GetKey(KeyCode.Q);
-            shiftRight = shiftRight || Input.GetKey(KeyCode.E);
         }
     }
 
@@ -105,9 +100,6 @@ public class PlayerInput : MonoBehaviour
 
         leftBtn = false;
         rightBtn = false;
-
-        shiftLeft = false;
-        shiftRight = false;
 
         escape = false;
 

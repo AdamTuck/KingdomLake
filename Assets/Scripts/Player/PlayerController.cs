@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Transform pickupAttachPoint;
+    [SerializeField] private GameObject fishingRodObj;
     //[SerializeField] private Transform pickupAttachUpperPos;
     //[SerializeField] private Transform pickupAttachLowerPos;
 
@@ -73,7 +74,9 @@ public class PlayerController : MonoBehaviour
 
     public void ChangeState(PlayerState state)
     {
-        currentState.OnStateExit();
+        if (currentState != null)
+            currentState.OnStateExit();
+
         currentState = state;
         currentState.OnStateEnter();
     }
@@ -161,5 +164,10 @@ public class PlayerController : MonoBehaviour
     public void SetGrounded(bool groundedState)
     {
         isGrounded = groundedState;
+    }
+
+    public void ShowRod (bool showRod)
+    {
+        fishingRodObj.SetActive(showRod);
     }
 }

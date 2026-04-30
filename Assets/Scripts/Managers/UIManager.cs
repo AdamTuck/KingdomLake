@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DistantLands.Cozy;
+using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,15 +10,20 @@ public class UIManager : MonoBehaviour
     [SerializeField] private bool clockVisible;
 
     [Header("UIScreens")]
+    [SerializeField] private GameObject splashScreenIntroObj;
     [SerializeField] private GameObject pauseScreenObj;
-    [SerializeField] private GameObject DayStartReportObj;
+    [SerializeField] private GameObject FishReportObj;
     [SerializeField] private GameObject ShopScreenObj;
     [SerializeField] private GameObject QuestScreenObj;
+    [SerializeField] private GameObject fishingViewFrameObj;
     [SerializeField] private DialogueAnimator dialogueAnimator;
 
     [Header("Object Refs")]
+    [SerializeField] private CanvasGroup splashScreenBGObj;
+    [SerializeField] private CanvasGroup daySpashScreenTxt;
     [SerializeField] private GameObject uiClockObject;
     [SerializeField] private DialogueSceneScriptableObject demoDialogueScene;
+    
 
     // Singleton
     public static UIManager instance;
@@ -126,8 +132,8 @@ public class UIManager : MonoBehaviour
 
     public void EnableFishingReport (bool toEnable)
     {
-        DayStartReportObj.SetActive(toEnable);
-        StopTime(toEnable);
+        FishReportObj.SetActive(toEnable);
+        StopTime(false);
     }
 
     public void EnableShop (bool toEnable)
@@ -145,6 +151,11 @@ public class UIManager : MonoBehaviour
             dialogueAnimator.StartDialogue(demoDialogueScene);
         else
             dialogueAnimator.CancelDialogue();
+    }
+
+    public void EnableFishingUI (bool isFishing)
+    {
+        fishingViewFrameObj.SetActive(isFishing);
     }
 
     public void LockCursor()
@@ -167,19 +178,55 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 1;
     }
 
+    public void ShowClock (bool showClock)
+    {
+        clockVisible = showClock;
+    }
+
     // UI BUTTONS //
 
-    public void DismissDayStartReportUI ()
+    public void DismissFishReportUI ()
     {
-        DayStartReportObj.SetActive(false);
-        GameManager.instance.ChangeState(GameManager.GameState.StartFishing);
+        FishReportObj.SetActive(false);
+        GameManager.instance.ChangeState(GameManager.GameState.DayStart);
         StopTime(false);
     }
 
     public void DismissQuestUI ()
     {
         QuestScreenObj.SetActive(false);
+        dialogueAnimator.CancelDialogue();
         GameManager.instance.ChangeState(GameManager.GameState.TownScene);
         StopTime(false);
+    }
+
+    public void DismissShopUI() 
+    {
+        ShopScreenObj.SetActive(false);
+        GameManager.instance.ChangeState(GameManager.GameState.DayOver);
+    }
+
+    // Day Intro //
+
+    public void StartDaySplashScreen()
+    {
+        StartCoroutine(AnimateIntro());
+    }
+
+    IEnumerator AnimateIntro()
+    {
+        splashScreenIntroObj.SetActive(true);
+
+        LeanTween.alphaCanvas(splashScreenBGObj, 1f, 0);
+        LeanTween.alphaCanvas(daySpashScreenTxt, 1f, 2);
+        yield return new WaitForSeconds(3);
+
+        GameManager.instance.ChangeState(GameManager.GameState.StartFishingFreeroam);
+
+        LeanTween.alphaCanvas(splashScreenBGObj, 0f, 3);
+        LeanTween.alphaCanvas(daySpashScreenTxt, 0f, 3);
+        yield return new WaitForSeconds(3);
+
+        splashScreenIntroObj.SetActive(false);
     }
 }
