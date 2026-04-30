@@ -49,9 +49,8 @@ public class PlayerFreeroamState : PlayerState
         {*/
         
         MovePlayer();
-            RotatePlayer();
             //CameraRotation();
-            CheckInputs();
+        CheckInputs();
         //}
     }
 
@@ -65,8 +64,12 @@ public class PlayerFreeroamState : PlayerState
     {
         Vector3 movementDirection = (player.transform.forward * input.vertical + player.transform.right * input.horizontal) * player.GetWalkSpeed() * Time.deltaTime;
         player.GetCharacterController().Move(movementDirection);
-        player.transform.Find("PlayerModel").transform.rotation = Quaternion.Slerp(player.transform.Find("PlayerModel").transform.rotation, Quaternion.LookRotation(movementDirection), Time.deltaTime * 40f);
 
+        // Rotate Player
+        if (movementDirection != Vector3.zero)
+            player.transform.Find("PlayerModel").transform.rotation = Quaternion.Slerp(player.transform.Find("PlayerModel").transform.rotation, Quaternion.LookRotation(movementDirection), Time.deltaTime * 40f);
+
+        // Fall if not grounded
         if (player.IsGrounded() && playerVelocity.y < 0)
             playerVelocity.y = -2.0f;
 
@@ -110,10 +113,5 @@ public class PlayerFreeroamState : PlayerState
         {
             SoundManager.instance.PlayMusicToggle();
         }*/
-    }
-
-    void RotatePlayer()
-    {
-        player.transform.Rotate(Vector3.up * player.GetTurnSpeed() * Time.deltaTime * input.mouseX);
     }
 }

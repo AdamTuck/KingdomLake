@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d82fa0cba225eb40b5877273f9682d0, type: 3}
+  m_Name: RomeoScene1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSceneScriptableObject
+  dialogueLines:
+  - line: Wait! Stay thy hand, your Fishgrace. Aid me in my life's work and I will
+      be your ally forever more. I shall explain!
+    character: Romeo
+    characterExpression: 0
+  - line: I was at a fancy ball amidst my family's most notorious enemies. But, to
+      appease the lord hosting, it was a peaceful feast.
+    character: Romeo
+    characterExpression: 0
+  - line: She was radiance. My love was immediate and with the passion of the waves.
+      I'm no doubt she too has felt the call of love divine!
+    character: Romeo
+    characterExpression: 0
+  - line: She left me with a promise, that we would be married within the fortnight.
+      I was overjoyed but there were complications.
+    character: Romeo
+    characterExpression: 0
+  - line: Romeo! Give up this love! She belongs to the school Montague, our most
+      hated enemies. To chase her will only bring ruin to you both!
+    character: Tibalt, the Merman
+    characterExpression: 0
+  - line: But I will not rest until I can hold her in my fins again. Your Fishgrace,
+      take me with you in your metal carriage. Help me find her!
+    character: Romeo
+    characterExpression: 0

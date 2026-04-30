@@ -10,18 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d82fa0cba225eb40b5877273f9682d0, type: 3}
-  m_Name: DialogueSceneTest
+  m_Name: RomeoScene2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSceneScriptableObject
   dialogueLines:
   - line: 
-    characterPortrait: 0
-    characterExpression: 0
-  - line: 
-    characterPortrait: 1
-    characterExpression: 0
-  - line: 
-    characterPortrait: 0
-    characterExpression: 0
-  - line: 
-    characterPortrait: 1
+    character: 
     characterExpression: 0

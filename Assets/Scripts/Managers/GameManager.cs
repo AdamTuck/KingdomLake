@@ -86,9 +86,9 @@ public class GameManager : MonoBehaviour
     }
     private void QuestScene()
     {
-        uiManager.EnableQuest(true);
         cameraManager.EnableBattleCam();
         player.ChangeState(new PlayerMenuState(player));
+        uiManager.EnableQuest(true);
     }
     private void TownScene() 
     {
@@ -110,11 +110,13 @@ public class GameManager : MonoBehaviour
 
     public void EndFishingDay()
     {
-        ChangeState(GameState.QuestScene);
+        if (currentState != GameState.QuestScene)
+            ChangeState(GameState.QuestScene);
     }
 
     public void EndTownDay()
     {
-        ChangeState(GameState.ShopScene);
+        if (currentState != GameState.ShopScene)
+            ChangeState(GameState.ShopScene);
     }
 }

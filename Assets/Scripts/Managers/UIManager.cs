@@ -13,9 +13,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject DayStartReportObj;
     [SerializeField] private GameObject ShopScreenObj;
     [SerializeField] private GameObject QuestScreenObj;
+    [SerializeField] private DialogueAnimator dialogueAnimator;
 
     [Header("Object Refs")]
     [SerializeField] private GameObject uiClockObject;
+    [SerializeField] private DialogueSceneScriptableObject demoDialogueScene;
 
     // Singleton
     public static UIManager instance;
@@ -138,6 +140,11 @@ public class UIManager : MonoBehaviour
     {
         QuestScreenObj.SetActive(toEnable);
         StopTime (toEnable);
+
+        if (toEnable)
+            dialogueAnimator.StartDialogue(demoDialogueScene);
+        else
+            dialogueAnimator.CancelDialogue();
     }
 
     public void LockCursor()
