@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c752eb7de0a1954999dc8b689356424, type: 3}
+  m_Script: {fileID: 11500000, guid: b472f104b74185240ab3e35a59ce5911, type: 3}
   m_Name: Fish02
   m_EditorClassIdentifier: Assembly-CSharp::FishScriptableObject
-  fishName: Fish02
-  fishPrefab: {fileID: 9150068014084401248, guid: f7cb329537b549642acb1a10b6f98928, type: 3}
-  fishType: 0
-  lakes: 0
-  minDepth: 10
-  maxDepth: 30
-  sellPriceLow: 10
-  sellPriceHigh: 20
+  fishTypeName: 
+  fishTypePrefab: {fileID: 0}
+  minDepth: 0
+  maxDepth: 0
+  sellPriceLow: 0
+  sellPriceHigh: 0
+  isQuestFish: 0
+  questFishScenes: []

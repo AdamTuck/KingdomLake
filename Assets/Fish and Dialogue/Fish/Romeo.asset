@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b472f104b74185240ab3e35a59ce5911, type: 3}
-  m_Name: Fish01
-  m_EditorClassIdentifier: Assembly-CSharp::FishScriptableObject
-  fishTypeName: 
+  m_Name: Romeo
+  m_EditorClassIdentifier: Assembly-CSharp::FishTypeScriptableObject
+  fishTypeName: Romeo
   fishTypePrefab: {fileID: 0}
   minDepth: 0
   maxDepth: 0
-  sellPriceLow: 0
-  sellPriceHigh: 0
-  isQuestFish: 0
-  questFishScenes: []
+  sellPriceLow: 50
+  sellPriceHigh: 70
+  isQuestFish: 1
+  questFishScenes:
+  - {fileID: 11400000, guid: 1add00b19576a2049940e42e934d505c, type: 2}

@@ -6,7 +6,7 @@ public class LakeManager : MonoBehaviour
     [SerializeField] private int numberOfFishInLake;
 
     [Header("Lake Stocking")]
-    [SerializeField] private FishScriptableObject[] lake1Fish;
+    [SerializeField] private FishTypeScriptableObject[] lake1Fish;
 
     [Header("Object Refs")]
     [SerializeField] private GameObject fishMovementArea;
