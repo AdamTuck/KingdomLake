@@ -11,6 +11,19 @@ public class Fish : MonoBehaviour, iCatchable
 
     private FishTypeScriptableObject fishType;
 
+    public Fish (FishTypeScriptableObject fishType)
+    {
+        this.fishType = fishType;
+        this.fishLevel = 1;
+
+        this.weight = Random.Range(fishType.minimumWeight, fishType.maximumWeight);
+        this.fishStamina = fishType.stamina; 
+        this.recovery = fishType.recovery;
+
+        this.value = Random.Range(fishType.sellPriceLow, fishType.sellPriceHigh) * this.weight;
+        this.injury = 0;
+    }
+
     public void OnCaught()
     {
         

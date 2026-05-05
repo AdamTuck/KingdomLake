@@ -8,6 +8,10 @@ public class FishTypeScriptableObject : ScriptableObject
     [Header("Fish Properties")]
     public string fishTypeName;
     public GameObject fishTypePrefab;
+    public float minimumWeight;
+    public float maximumWeight;
+    public float stamina;
+    public float recovery;
 
     [Header("Location")]
     public float minDepth;
