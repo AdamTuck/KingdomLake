@@ -11,6 +11,22 @@ public class Fish : MonoBehaviour, iCatchable
 
     private FishTypeScriptableObject fishType;
 
+    private LakeManager fishPool;
+    private LakeRegion currentRegion;
+
+    public void SetObjectPool(LakeManager pool)
+    {
+        fishPool = pool;
+    }
+
+    public void Destroy()
+    {
+        if (fishPool != null)
+            fishPool.RestoreObject(this);
+
+        ResetFishStats(fishType);
+    }
+
     public Fish (FishTypeScriptableObject fishType)
     {
         this.fishType = fishType;
@@ -24,6 +40,19 @@ public class Fish : MonoBehaviour, iCatchable
         this.injury = 0;
     }
 
+    public void ResetFishStats (FishTypeScriptableObject _fishType)
+    {
+        fishType = _fishType;
+        fishLevel = 1;
+
+        weight = Random.Range(fishType.minimumWeight, fishType.maximumWeight);
+        fishStamina = fishType.stamina;
+        recovery = fishType.recovery;
+
+        value = Random.Range(fishType.sellPriceLow, fishType.sellPriceHigh) * this.weight;
+        injury = 0;
+    }
+
     public void OnCaught()
     {
         
@@ -32,5 +61,10 @@ public class Fish : MonoBehaviour, iCatchable
     public void OnHooked()
     {
         
+    }
+
+    public LakeRegion GetCurrentRegion()
+    {
+        return currentRegion;
     }
 }

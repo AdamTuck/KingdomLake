@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     CameraManager cameraManager;
     UIManager uiManager;
 
+    private bool firstDay = true;
+
     // Singleton
     public static GameManager instance;
 
@@ -72,6 +74,16 @@ public class GameManager : MonoBehaviour
 
     private void StartDay()
     {
+        if (firstDay)
+        {
+            //SaveManager.LoadGame();
+            LakeManager.instance.InitializePool();
+        }
+        else
+        {
+            //SaveManager.SaveGame();
+        }
+
         uiManager.ShowClock(false);
         cameraManager.EnableOverheadCam();
         CozyWeather.instance.timeModule.SetHour(dayStartHour);
@@ -103,6 +115,7 @@ public class GameManager : MonoBehaviour
     private void TownScene() 
     {
         uiManager.ShowClock(true);
+        timeProfile.timeMovementSpeed = 0;
 
         cameraManager.EnableOverheadCam();
         player.ChangeState(new PlayerFreeroamState(player, player.freeRoamSpawnTown.transform.position));
@@ -118,6 +131,9 @@ public class GameManager : MonoBehaviour
     }
     private void DayOver() 
     {
+        if (firstDay)
+            firstDay = false;
+
         timeProfile.timeMovementSpeed = 75;
 
         UIManager.instance.EnableFishingReport(true);

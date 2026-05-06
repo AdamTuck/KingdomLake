@@ -10,13 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b472f104b74185240ab3e35a59ce5911, type: 3}
-  m_Name: Fish01
+  m_Name: Fish01 - Trout
   m_EditorClassIdentifier: Assembly-CSharp::FishScriptableObject
-  fishTypeName: 
-  fishTypePrefab: {fileID: 0}
+  fishTypeName: Trout
+  fishTypePrefab: {fileID: 8065075731442419173, guid: 32ec778f1d12b284f980ac5cf5c12114, type: 3}
+  minimumWeight: 5
+  maximumWeight: 7
+  stamina: 1.5
+  recovery: 0.4
   minDepth: 0
-  maxDepth: 0
-  sellPriceLow: 0
-  sellPriceHigh: 0
+  maxDepth: 100
+  sellPriceLow: 4
+  sellPriceHigh: 6
   isQuestFish: 0
   questFishScenes: []
