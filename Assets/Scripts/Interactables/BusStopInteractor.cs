@@ -17,6 +17,7 @@ public class BusStopInteractor : MonoBehaviour, iInteractable
     {
         if (other.TryGetComponent<PlayerController>(out var player))
         {
+            UIManager.instance.ShowTooltip("Press E to End Day");
             PlayerController.instance.SetCurrentTrigger(gameObject);
             canInteract = true;
         }
@@ -26,6 +27,7 @@ public class BusStopInteractor : MonoBehaviour, iInteractable
     {
         if (other.TryGetComponent<PlayerController>(out var player))
         {
+            UIManager.instance.DismissTooltip();
             PlayerController.instance.SetCurrentTrigger(null);
             canInteract= false;
         }

@@ -18,6 +18,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject fishingViewFrameObj;
     [SerializeField] private DialogueAnimator dialogueAnimator;
 
+    [Header("Tooltips")]
+    [SerializeField] private GameObject tooltipObj;
+    [SerializeField] private TextMeshProUGUI tooltipText;
+
     [Header("Object Refs")]
     [SerializeField] private CanvasGroup splashScreenBGObj;
     [SerializeField] private CanvasGroup daySpashScreenTxt;
@@ -188,6 +192,25 @@ public class UIManager : MonoBehaviour
         clockVisible = showClock;
     }
 
+    // TOOLTIPS //
+
+    public void ShowTooltip (string _tooltipText)
+    {
+        tooltipText.text = _tooltipText;
+        tooltipObj.SetActive(true);
+    }
+
+    public void DismissTooltip ()
+    {
+        tooltipObj.SetActive(false);
+        tooltipText.text = "";
+    }
+
+    public void HideTooltip (bool hideTooltip)
+    {
+        tooltipObj.SetActive(!hideTooltip);
+    }
+
     // INTERACTIONS //
 
     public void DismissFishReportUI ()
@@ -208,12 +231,14 @@ public class UIManager : MonoBehaviour
     public void ShowShopUI()
     {
         ShopScreenObj.SetActive(true);
+        HideTooltip(true);
         PlayerController.instance.ChangeState(new PlayerMenuState(player));
     }
 
     public void DismissShopUI() 
     {
         ShopScreenObj.SetActive(false);
+        HideTooltip(false);
         PlayerController.instance.ChangeState(new PlayerFreeroamState(player, player.transform.position));
     }
 
