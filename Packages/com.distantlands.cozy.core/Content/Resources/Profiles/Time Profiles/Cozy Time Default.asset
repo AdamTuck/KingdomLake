@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cozy Time Default
   m_EditorClassIdentifier: 
   pauseTime: 0
-  realisticYear: 0
+  realisticYear: 1
   useLeapYear: 1
   resetTimeOnStart: 0
   startTime:
@@ -99,4 +99,4 @@ MonoBehaviour:
     days: 30
   - name: December
     days: 31
-  daysPerYear: 48
+  daysPerYear: 366

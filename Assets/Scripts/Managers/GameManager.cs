@@ -136,6 +136,11 @@ public class GameManager : MonoBehaviour
 
         timeProfile.timeMovementSpeed = 75;
 
+        uiManager.ShowClock(false);
+        player.ChangeState(new PlayerMenuState(player));
+
+        PlayerController.instance.TeleportPlayer("fishing");
+
         UIManager.instance.EnableFishingReport(true);
         cameraManager.EnableBattleCam();
     }
@@ -148,17 +153,18 @@ public class GameManager : MonoBehaviour
             ChangeState(GameState.QuestScene);
     }
 
-    public void EndTownDay()
-    {
-        if (currentState != GameState.ShopScene)
-            ChangeState(GameState.ShopScene);
-    }
-
     // Weather Event Controls //
 
     public void MorningFreezeInGameClock ()
     {
         if (currentState == GameState.DayOver)
             timeProfile.timeMovementSpeed = 0;
+    }
+
+    // Sharing is caring //
+
+    public PlayerController GetPlayer()
+    {
+        return player;
     }
 }

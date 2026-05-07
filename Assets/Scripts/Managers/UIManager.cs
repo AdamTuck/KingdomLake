@@ -23,7 +23,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private CanvasGroup daySpashScreenTxt;
     [SerializeField] private GameObject uiClockObject;
     [SerializeField] private DialogueSceneScriptableObject demoDialogueScene;
-    
+
+    private PlayerController player;
 
     // Singleton
     public static UIManager instance;
@@ -37,6 +38,10 @@ public class UIManager : MonoBehaviour
         }
 
         instance = this;
+    }
+    private void Start()
+    {
+        player = GameManager.instance.GetPlayer();
     }
 
     private void Update()
@@ -183,7 +188,7 @@ public class UIManager : MonoBehaviour
         clockVisible = showClock;
     }
 
-    // UI BUTTONS //
+    // INTERACTIONS //
 
     public void DismissFishReportUI ()
     {
@@ -200,10 +205,16 @@ public class UIManager : MonoBehaviour
         StopTime(false);
     }
 
+    public void ShowShopUI()
+    {
+        ShopScreenObj.SetActive(true);
+        PlayerController.instance.ChangeState(new PlayerMenuState(player));
+    }
+
     public void DismissShopUI() 
     {
         ShopScreenObj.SetActive(false);
-        GameManager.instance.ChangeState(GameManager.GameState.DayOver);
+        PlayerController.instance.ChangeState(new PlayerFreeroamState(player, player.transform.position));
     }
 
     // Day Intro //

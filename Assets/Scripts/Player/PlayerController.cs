@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     public Transform freeRoamSpawnFish;
     public Transform freeRoamSpawnTown;
 
+    //[Header("Interaction")]
+    private GameObject currentTrigger;
+
     [Header("Ground Check")]
     [SerializeField] private Transform groundCheckTransform;
     [SerializeField] private LayerMask groundLayerMask;
@@ -169,5 +172,33 @@ public class PlayerController : MonoBehaviour
     public void ShowRod (bool showRod)
     {
         fishingRodObj.SetActive(showRod);
+    }
+
+    public void TeleportPlayer (Vector3 teleportPos)
+    {
+        gameObject.transform.position = teleportPos;
+    }
+
+    /// <summary>
+    /// Teleports the player to pre-designated locations stored in player controller. I didn't write GETs, maybe I should have, oh well
+    /// </summary>
+    /// <param name="teleportLocation">"fishing" = fishing start position, "town" = town start position</param>
+    public void TeleportPlayer (string teleportLocation)
+    {
+        if (teleportLocation == "fishing")
+            gameObject.transform.position = freeRoamSpawnFish.transform.position;
+
+        if (teleportLocation == "town")
+            gameObject.transform.position = freeRoamSpawnTown.transform.position;
+    }
+
+    public void SetCurrentTrigger (GameObject _currentTrigger)
+    {
+        currentTrigger = _currentTrigger;
+    }
+
+    public GameObject GetCurrentTrigger ()
+    {
+        return currentTrigger;
     }
 }

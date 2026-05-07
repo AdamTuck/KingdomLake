@@ -10,6 +10,8 @@ public class PlayerFreeroamState : PlayerState
     bool slideToPos;
     bool resetPos;
 
+    private iInteractable interactable;
+
     public PlayerFreeroamState(PlayerController _player, Vector3 startPos) : base(_player)
     {
         startPosition = startPos;
@@ -101,7 +103,15 @@ public class PlayerFreeroamState : PlayerState
         if (PlayerInput.GetInstance().interactSecondary)
         {
             player.ChangeState(new PlayerFishingState(player));
-        } 
+        }
+
+        if (PlayerInput.GetInstance().interact)
+        {
+            interactable = PlayerController.instance.GetCurrentTrigger().GetComponent<iInteractable>();
+
+            if (interactable != null)
+                interactable.OnInteract();
+        }
 
         /*if (PlayerInput.GetInstance().space && !GameManager.instance.IsLockedAtDesk())
         {
