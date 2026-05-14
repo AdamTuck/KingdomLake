@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Starting Day...");
 
+        MusicManager.Instance.PlayMusic("Lake");
         player.ChangeState(new PlayerFreeroamState(player, player.freeRoamSpawnFish.transform.position));
         uiManager.ShowClock(true);
         player.ShowRod(true);
@@ -114,6 +115,7 @@ public class GameManager : MonoBehaviour
     }
     private void TownScene() 
     {
+        MusicManager.Instance.PlayMusic("Town");
         uiManager.ShowClock(true);
         timeProfile.timeMovementSpeed = 0;
 
@@ -133,6 +135,8 @@ public class GameManager : MonoBehaviour
     {
         if (firstDay)
             firstDay = false;
+
+        MusicManager.Instance.PlayMusic("Report");
 
         timeProfile.timeMovementSpeed = 75;
 
