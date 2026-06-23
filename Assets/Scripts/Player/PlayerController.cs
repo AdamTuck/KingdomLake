@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     [Header("References")]
+    [SerializeField] private GameObject playerVisual;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Transform pickupAttachPoint;
     [SerializeField] private GameObject fishingRodObj;
@@ -122,6 +123,11 @@ public class PlayerController : MonoBehaviour
     public float GetGravity()
     {
         return gravity;
+    }
+
+    public GameObject GetPlayerVisual()
+    {
+        return playerVisual;
     }
 
     /*public void MoveUpAttachPoint()
