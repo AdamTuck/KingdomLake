@@ -14,8 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FishScriptableObject
   fishTypeName: 
   fishTypePrefab: {fileID: 0}
+  minimumWeight: 0
+  maximumWeight: 0
+  stamina: 0
+  recovery: 0
   minDepth: 0
   maxDepth: 0
+  swimmingActivityLevel: 50
+  swimSpeed: 0
+  rotationSpeed: 0
   sellPriceLow: 0
   sellPriceHigh: 0
   isQuestFish: 0

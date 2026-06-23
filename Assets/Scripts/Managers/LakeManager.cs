@@ -5,6 +5,7 @@ public class LakeManager : MonoBehaviour
 {
     [Header("Lakes")]
     [SerializeField] private Lake[] lakes;
+    [SerializeField] private Lake currentLake;
 
     [Header("Properties")]
     [SerializeField] private int poolSizes;
@@ -88,5 +89,10 @@ public class LakeManager : MonoBehaviour
         objToRestore.gameObject.transform.SetParent(troutPoolReserves.transform);
         usedTroutPool.Remove(objToRestore);
         troutPool.Add(objToRestore);
+    }
+
+    public Lake GetCurrentLake()
+    {
+        return currentLake;
     }
 }

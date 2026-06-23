@@ -13,9 +13,12 @@ public class FishTypeScriptableObject : ScriptableObject
     public float stamina;
     public float recovery;
 
-    [Header("Location")]
+    [Header("Swim Properties")]
     public float minDepth;
     public float maxDepth;
+    public float swimmingActivityLevel = 50f;
+    public float swimSpeed = 0.001f;
+    public float rotationSpeed = 4.0f;
 
     [Header("Capitalism")]
     public float sellPriceLow;

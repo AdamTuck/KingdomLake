@@ -6,7 +6,7 @@ public class FishNation : ScriptableObject
 {
     [Header("Nation Properties")]
     public string nationName;
-    public RawImage nationBanner;
+    public Texture2D nationBanner;
 
     [Header("Nation Fish")]
     public int startingPopulation;

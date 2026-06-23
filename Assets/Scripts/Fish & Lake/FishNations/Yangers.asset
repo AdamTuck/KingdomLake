@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8199576e32be58548b1c61a7c7ee249e, type: 3}
+  m_Name: Yangers
+  m_EditorClassIdentifier: Assembly-CSharp::FishNation
+  nationName: Yangers
+  nationBanner: {fileID: 2800000, guid: 7e19a2df62c9a5e468d75c04563399c0, type: 3}
+  startingPopulation: 15
+  targetStartingRegions: 5
+  homeRegion: {fileID: 0}

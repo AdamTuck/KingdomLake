@@ -1,17 +1,54 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "LakeRegionObject", menuName = "Scriptable Objects/LakeRegionObject")]
-public class LakeRegion : ScriptableObject
+public class LakeRegion : MonoBehaviour
 {
-    public string lakeRegionName;
-    public GameObject lakeRegionSwimZone;
+    [Header("Starting Properties")]
 
-    private FishNation controllingFaction;
+    [SerializeField] private string lakeRegionName;
+    [SerializeField] private FishNation isFactionHomeRegion;
+    [SerializeField] private int maxArmySize;
+    [SerializeField] private LakeRegion[] neighbouringRegions;
 
-    private List<Fish> regionFish = new List<Fish>();
+    [Header("Current Properties")]
+    [SerializeField] private Lake currentLake;
+    [SerializeField] private FishNation controllingFaction;
+    [SerializeField] private List<Fish> regionFish = new List<Fish>();
+    [SerializeField] private List<LakeRegion> closestRegions = new List<LakeRegion>();
 
     public FishNation GetControllingFaction () { return controllingFaction; }
     public List<Fish> GetRegionFishList () { return regionFish; }
+
+    public void AddRegionFish (List<Fish> fishList)
+    {
+        regionFish.AddRange (fishList);
+    }
+
+    public void RemoveRegionFish()
+    {
+        regionFish = null;
+    }
+
+    public void RemoveRegionFish(Fish fish)
+    {
+        regionFish.Remove(fish);
+    }
+
+    public LakeRegion[] GetNeighbouringRegions () 
+    {     
+        return neighbouringRegions; 
+    }
+
+    public LakeRegion GetRandomNeighbourRegion (bool isEmpty)
+    {
+        LakeRegion chosenRegion = null;
+
+        List<LakeRegion> regionCandidates = new List<LakeRegion>();
+        regionCandidates.AddRange(neighbouringRegions);
+
+        int neighbourIndex = Random.Range(0, neighbouringRegions.Length);
+        chosenRegion = closestRegions[neighbourIndex];
+
+        return chosenRegion;
+    }
 }

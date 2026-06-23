@@ -20,6 +20,9 @@ MonoBehaviour:
   recovery: 0.4
   minDepth: 0
   maxDepth: 100
+  swimmingActivityLevel: 50
+  swimSpeed: 0
+  rotationSpeed: 0
   sellPriceLow: 4
   sellPriceHigh: 6
   isQuestFish: 0

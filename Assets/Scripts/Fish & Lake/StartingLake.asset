@@ -26,4 +26,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  fishNationsInLake: []
+  fishNationsInLake:
+  - {fileID: 11400000, guid: 414e4e4be7f1e0c4abea7f8fe934b911, type: 2}
+  - {fileID: 11400000, guid: 421ca4bd0dadc7146bd10ad4f1c79e41, type: 2}
+  - {fileID: 11400000, guid: fbb7b476fab8cda40a5f93916b0873db, type: 2}
+  - {fileID: 11400000, guid: 3729ad9f4611bbe4ab9cbe22cf127872, type: 2}

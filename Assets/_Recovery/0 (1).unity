@@ -1596,15 +1596,8 @@ MonoBehaviour:
   lakeRegionName: Yangers Homeland
   isFactionHomeRegion: {fileID: 11400000, guid: 3729ad9f4611bbe4ab9cbe22cf127872, type: 2}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 1273412335}
-  - {fileID: 999475364}
-  - {fileID: 743686222}
-  - {fileID: 1811662236}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1 &213543507 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8585650954766913903, guid: 5c06f3174e1062d44b9caa19b044b217, type: 3}
@@ -1914,15 +1907,8 @@ MonoBehaviour:
   lakeRegionName: 
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 1886228977}
-  - {fileID: 468865661}
-  - {fileID: 1087038348}
-  - {fileID: 1973966813}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1 &236008664
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,17 +2462,8 @@ MonoBehaviour:
   lakeRegionName: 
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 407291960}
-  - {fileID: 730148771}
-  - {fileID: 1561749843}
-  - {fileID: 1886228977}
-  - {fileID: 743686222}
-  - {fileID: 468865661}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1 &282153431 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6664978180115752664, guid: aa70d17808ffa51488493614feb522bf, type: 3}
@@ -3281,7 +3258,7 @@ MonoBehaviour:
   biomes: []
   weight: 1
   totalSystemWeight: 0
-  cumulus: 0.2
+  cumulus: 0
   cirrus: 0
   altocumulus: 0
   cirrostratus: 0
@@ -4060,16 +4037,8 @@ MonoBehaviour:
   lakeRegionName: 
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 407291960}
-  - {fileID: 606698017}
-  - {fileID: 593082865}
-  - {fileID: 1273412335}
-  - {fileID: 999475364}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1 &333928842
 GameObject:
   m_ObjectHideFlags: 0
@@ -9504,17 +9473,8 @@ MonoBehaviour:
   lakeRegionName: North Dock
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 730148771}
-  - {fileID: 606698017}
-  - {fileID: 261783871}
-  - {fileID: 333746272}
-  - {fileID: 743686222}
-  - {fileID: 999475364}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1001 &418241512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15116,15 +15076,8 @@ MonoBehaviour:
   lakeRegionName: 
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 261783871}
-  - {fileID: 1886228977}
-  - {fileID: 743686222}
-  - {fileID: 235913595}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1 &476877864
 GameObject:
   m_ObjectHideFlags: 0
@@ -16817,15 +16770,8 @@ MonoBehaviour:
   lakeRegionName: 
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 333746272}
-  - {fileID: 1116618881}
-  - {fileID: 1273412335}
-  - {fileID: 999475364}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1001 &594224904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17250,14 +17196,8 @@ MonoBehaviour:
   lakeRegionName: East Dock
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 407291960}
-  - {fileID: 730148771}
-  - {fileID: 333746272}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1 &617720671
 GameObject:
   m_ObjectHideFlags: 0
@@ -17276,7 +17216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &617720672
 Transform:
   m_ObjectHideFlags: 0
@@ -17667,15 +17607,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1601354369822315696, guid: 1547e00092a8c1847b40d67f29c0c299, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.93035
+      value: 1.8324776
       objectReference: {fileID: 0}
     - target: {fileID: 1601354369822315696, guid: 1547e00092a8c1847b40d67f29c0c299, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.7820432
+      value: 4.001935
       objectReference: {fileID: 0}
     - target: {fileID: 1601354369822315696, guid: 1547e00092a8c1847b40d67f29c0c299, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -36.531998
+      value: -0.9439555
       objectReference: {fileID: 0}
     - target: {fileID: 1601354369822315696, guid: 1547e00092a8c1847b40d67f29c0c299, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18541,15 +18481,8 @@ MonoBehaviour:
   lakeRegionName: Bloobers Homeland
   isFactionHomeRegion: {fileID: 11400000, guid: 414e4e4be7f1e0c4abea7f8fe934b911, type: 2}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 407291960}
-  - {fileID: 606698017}
-  - {fileID: 261783871}
-  - {fileID: 1561749843}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1 &743686217
 GameObject:
   m_ObjectHideFlags: 0
@@ -18678,16 +18611,8 @@ MonoBehaviour:
   lakeRegionName: 
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 407291960}
-  - {fileID: 261783871}
-  - {fileID: 999475364}
-  - {fileID: 468865661}
-  - {fileID: 211078636}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1001 &752957026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21905,17 +21830,8 @@ MonoBehaviour:
   lakeRegionName: 
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 407291960}
-  - {fileID: 333746272}
-  - {fileID: 1273412335}
-  - {fileID: 743686222}
-  - {fileID: 1811662236}
-  - {fileID: 211078636}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1 &1000143919
 GameObject:
   m_ObjectHideFlags: 0
@@ -22883,15 +22799,8 @@ MonoBehaviour:
   lakeRegionName: Gungos Homeland
   isFactionHomeRegion: {fileID: 11400000, guid: 421ca4bd0dadc7146bd10ad4f1c79e41, type: 2}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 1561749843}
-  - {fileID: 1886228977}
-  - {fileID: 235913595}
-  - {fileID: 1973966813}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1 &1091802778
 GameObject:
   m_ObjectHideFlags: 0
@@ -23338,13 +23247,8 @@ MonoBehaviour:
   lakeRegionName: Skrunklers Homeland
   isFactionHomeRegion: {fileID: 11400000, guid: fbb7b476fab8cda40a5f93916b0873db, type: 2}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 1116618881}
-  - {fileID: 1610175034}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1 &1116618876
 GameObject:
   m_ObjectHideFlags: 0
@@ -23473,15 +23377,8 @@ MonoBehaviour:
   lakeRegionName: 
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 593082865}
-  - {fileID: 1273412335}
-  - {fileID: 1610175034}
-  - {fileID: 1103227214}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1 &1126703721
 GameObject:
   m_ObjectHideFlags: 0
@@ -23780,7 +23677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 622543205247438978, guid: 403a9af4ecfc8fa4db7cf2680a4bb3cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.93035
+      value: 1.8324776
       objectReference: {fileID: 0}
     - target: {fileID: 622543205247438978, guid: 403a9af4ecfc8fa4db7cf2680a4bb3cd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23788,7 +23685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 622543205247438978, guid: 403a9af4ecfc8fa4db7cf2680a4bb3cd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -36.531998
+      value: -0.9439555
       objectReference: {fileID: 0}
     - target: {fileID: 622543205247438978, guid: 403a9af4ecfc8fa4db7cf2680a4bb3cd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25095,16 +24992,8 @@ MonoBehaviour:
   lakeRegionName: 
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 593082865}
-  - {fileID: 1116618881}
-  - {fileID: 999475364}
-  - {fileID: 1610175034}
-  - {fileID: 1811662236}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1 &1287886922
 GameObject:
   m_ObjectHideFlags: 0
@@ -28294,15 +28183,8 @@ MonoBehaviour:
   lakeRegionName: 
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 730148771}
-  - {fileID: 261783871}
-  - {fileID: 1886228977}
-  - {fileID: 1087038348}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1001 &1561957783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28999,15 +28881,8 @@ MonoBehaviour:
   lakeRegionName: 
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 1116618881}
-  - {fileID: 1273412335}
-  - {fileID: 1103227214}
-  - {fileID: 1811662236}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1001 &1619308831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29551,11 +29426,7 @@ MonoBehaviour:
   - {fileID: 1103227214}
   - {fileID: 1811662236}
   - {fileID: 211078636}
-  startingRegions:
-  - {fileID: 407291960}
-  - {fileID: 1973966813}
-  - {fileID: 1103227214}
-  - {fileID: 211078636}
+  startingRegions: []
   fishNationsInLake:
   - {fileID: 11400000, guid: 414e4e4be7f1e0c4abea7f8fe934b911, type: 2}
   - {fileID: 11400000, guid: 421ca4bd0dadc7146bd10ad4f1c79e41, type: 2}
@@ -31246,15 +31117,8 @@ MonoBehaviour:
   lakeRegionName: 
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 1273412335}
-  - {fileID: 999475364}
-  - {fileID: 1610175034}
-  - {fileID: 211078636}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1001 &1812271792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31761,16 +31625,8 @@ MonoBehaviour:
   lakeRegionName: 
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 261783871}
-  - {fileID: 1561749843}
-  - {fileID: 468865661}
-  - {fileID: 235913595}
-  - {fileID: 1087038348}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1 &1888981971
 GameObject:
   m_ObjectHideFlags: 0
@@ -32144,7 +32000,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890818226}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 12
   m_Type: 1
   m_Color: {r: 0, g: 0, b: 0, a: 0}
@@ -37752,14 +37608,8 @@ MonoBehaviour:
   lakeRegionName: 
   isFactionHomeRegion: {fileID: 0}
   maxArmySize: 10
-  neighbouringRegions:
-  - {fileID: 1886228977}
-  - {fileID: 235913595}
-  - {fileID: 1087038348}
-  currentLake: {fileID: 0}
   controllingFaction: {fileID: 0}
   regionFish: []
-  closestRegions: []
 --- !u!1 &2000175071
 GameObject:
   m_ObjectHideFlags: 0
@@ -38288,9 +38138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6d6155eac7bb4438233ee654fb8929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishManager
-  lakes:
-  - {fileID: 1679331036}
-  currentLake: {fileID: 1679331036}
+  lakes: []
   poolSizes: 100
   fishMovementArea: {fileID: 1768683834}
   troutPoolReserves: {fileID: 1517281277}
@@ -38698,7 +38546,7 @@ Transform:
   m_GameObject: {fileID: 2043600827}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000000037252899, y: -0, z: -0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 6.1340985, y: 19.489174, z: 10.359903}
+  m_LocalPosition: {x: 0.29692522, y: 5.231781, z: -1.1683788}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
