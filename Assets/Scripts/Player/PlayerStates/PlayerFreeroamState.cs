@@ -32,6 +32,14 @@ public class PlayerFreeroamState : PlayerState
     private float inputHeldTime;
     private float currentSpeedMultiplier;
 
+    //Variables handling the hold-charge for cast strength later
+    [Header("Cast Settings")]
+    public int maxValue = 100;          // counter wraps to 0 once it would reach this
+    public float tickInterval = 0.2f;  // seconds between increment
+    private int currentCast;
+    private Coroutine castRoutine;
+
+
 
     public PlayerFreeroamState(PlayerController _player, Vector3 startPos) : base(_player)
     {
@@ -194,6 +202,7 @@ public class PlayerFreeroamState : PlayerState
 
     private void CheckInputs()
     {
+
         if (PlayerInput.GetInstance().escape)
         {
             UIManager.instance.PauseGameToggle();
@@ -202,6 +211,20 @@ public class PlayerFreeroamState : PlayerState
         if (PlayerInput.GetInstance().interactSecondary)
         {
             player.ChangeState(new PlayerFishingState(player));
+        }
+
+        if (PlayerInput.GetInstance().leftBtnDown && castRoutine == null)
+        {
+            Debug.Log("Player Cast Button Pressed:");
+            currentCast = 0;
+            castRoutine = player.StartCoroutine(CastLoop());
+        }
+
+        if (PlayerInput.GetInstance().leftBtnUp && castRoutine != null)
+        {
+            player.StopCoroutine(castRoutine);
+            castRoutine = null;
+            HandleFinalCast(currentCast);
         }
 
         if (PlayerInput.GetInstance().interact)
@@ -214,6 +237,8 @@ public class PlayerFreeroamState : PlayerState
             if (interactable != null)
                 interactable.OnInteract();
         }
+
+
 
         /*if (PlayerInput.GetInstance().space && !GameManager.instance.IsLockedAtDesk())
         {
@@ -231,4 +256,24 @@ public class PlayerFreeroamState : PlayerState
             SoundManager.instance.PlayMusicToggle();
         }*/
     }
+
+    private IEnumerator CastLoop()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(tickInterval);
+
+            currentCast++;
+            Debug.Log("iterating " + currentCast);
+
+            if (currentCast >= maxValue)
+                currentCast = 0;
+        }
+    }
+
+    private void HandleFinalCast(int finalValue)
+    {
+        Debug.Log($"Final cast on release: {finalValue}");
+    }
+
 }

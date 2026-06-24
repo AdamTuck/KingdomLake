@@ -13,6 +13,8 @@ public class PlayerInput : MonoBehaviour
     public bool space { get; private set; }
     public bool tab { get; private set; }
     public bool leftBtn { get; private set; }
+    public bool leftBtnUp { get; private set; }
+    public bool leftBtnDown { get; private set; }
     public bool rightBtn { get; private set; }
     public bool escape { get; private set; }
     public bool num1Pressed { get; private set; }
@@ -73,6 +75,10 @@ public class PlayerInput : MonoBehaviour
             tab = tab || Input.GetKeyDown(KeyCode.Tab);
 
             leftBtn = leftBtn || Input.GetButtonDown("Fire1");
+            // Make left button press and release single-frame events so they only register once per press.
+            leftBtnDown = Input.GetButtonDown("Fire1");
+            leftBtnUp = Input.GetButtonUp("Fire1");
+
             rightBtn = rightBtn || Input.GetButton("Fire2");
 
             num1Pressed = num1Pressed || Input.GetKeyDown(KeyCode.Alpha1);
